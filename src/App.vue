@@ -42,7 +42,7 @@
 
 <template>
   <div id="section1" class="section text">
-    俐落薄型新詮釋。
+    <p class="text-gradient">俐落薄型新詮釋。</p>
   </div>
   <div id="section2" class="section" :style="{'--scale': progress }" :class="{ sticky: fixClass }">
     <div class="phone">
@@ -63,7 +63,7 @@
     </div>
   </div>
   <div id="section4" class="section text">
-    相機與音響，再進化。
+    <p class="text-gradient">相機與音響，再進化。</p>
   </div>
 </template>
 
@@ -71,7 +71,7 @@
 * {
   margin: 0;
   padding: 0;
-  outline: 1px solid red;
+  // outline: 1px solid red;
 }
 body {
   overflow: hidden;  // 隱藏 瀏覽器滾動條
@@ -88,10 +88,6 @@ html {
   align-items : center;
   font-size: 60px;
   font-weight: 700;
-  background-image: linear-gradient( 90deg ,var(--gradient-start),var(--gradient-end));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: rgb(0 0 0 / 0%);
 }
 #app {
   height: 100vh; 
@@ -101,7 +97,7 @@ html {
   height: 100%;
   position: relative;
   overflow: hidden; // 隱藏超出的元素或圖片
-  background-color: white;
+  background-color: black;
 }
 #section2 {
   --scale:3;
@@ -109,6 +105,21 @@ html {
 }
 #section3 {
   --scale:1;
+}
+#section2 , #section3 {
+  background-color : white;
+}
+.text-gradient {
+  // background-image: linear-gradient(180deg, #09ACF5, #62DB54);
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: rgb(0 0 0 / 0%);
 }
 .phone {
   // alex 
